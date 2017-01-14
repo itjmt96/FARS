@@ -23,6 +23,7 @@ It returns the data plotted for state number by LONGITUDE > 900 and LATITUDE > 9
 It uses functions: make_filename and fars_read
 }
 \examples{
+\dontrun{
 fars_map_state(25, 2015)
 fars_map_state(state.num=25, year=2015)
 fars_map_state("25", "2015")
@@ -31,6 +32,7 @@ fars_map_state(25, "2015")
 fars_map_state(state.num=25, year="2015")
 fars_map_state("25", 2015)
 fars_map_state(state.num="25", year=2015)
+}
 
 }
 

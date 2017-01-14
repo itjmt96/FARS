@@ -20,8 +20,10 @@ If the file exists, this function reads it into dataframe object.
 It suppresses messages and progress bar while reading the file.
 }
 \examples{
+\dontrun{
 fars_read("accident_2013.csv.bz2")
 fars_read(filename="accident_2013.csv.bz2")
+}
 
 }
 

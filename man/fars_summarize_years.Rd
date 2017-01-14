@@ -19,10 +19,12 @@ It outputs a warning message if it cannot find a file for a year in the years pa
 It uses function: fars_read_years
 }
 \examples{
+\dontrun{
 fars_summarize_years(list(2013, 2014, 2015))
 fars_summarize_years(year=list(2013, 2014, 2015))
 fars_summarize_years(list("2013", "2014", "2015"))
 fars_summarize_years(year=list("2013", "2014", "2015"))
+}
 
 }
 

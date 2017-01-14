@@ -5,12 +5,16 @@ Version: 0.1
 Date: 2017-01-06
 Author: JMT
 Maintainer: JMT <jmt@fars.com>
-Description: Functions to analyze data related to fatal injuries suffered
-    in motor vehicle traffic crashes from US National Highway Traffic Safety
-    Administration's Fatality Analysis Reporting System
-License: JMT
+Description: FARS Package has functions to analyze data related to fatal injuries suffered in motor vehicle traffic crashes. Data is from US National Highway Traffic Safety
+ Administration's Fatality Analysis Reporting System.
+License: GPL (>= 3)
 LazyData: TRUE
 RoxygenNote: 5.0.1
+Imports: dplyr,
+         maps,
+         readr,
+         tidyr
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr

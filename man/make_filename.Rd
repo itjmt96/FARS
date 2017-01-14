@@ -18,10 +18,12 @@ It converts year parameter as integer.
 It returns output filename as string with the input year.
 }
 \examples{
+\dontrun{
 make_filename(2012)
 make_filename(year=2012)
 make_filename("2012")
 make_filename(year="2012")
+}
 
 }
 

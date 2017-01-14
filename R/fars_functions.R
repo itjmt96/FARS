@@ -1,3 +1,5 @@
+utils::globalVariables(c("year", "MONTH", "n", "STATE"))
+#'
 #' Function to read FARS file.
 #'
 #' This function uses readr and dplyr packages.
@@ -13,8 +15,10 @@
 #' @return File data is read into a dataframe object.
 #'
 #' @examples
+#' \dontrun{
 #' fars_read("accident_2013.csv.bz2")
 #' fars_read(filename="accident_2013.csv.bz2")
+#' }
 #'
 #' @export
 fars_read <- function(filename) {
@@ -37,10 +41,12 @@ fars_read <- function(filename) {
 #' @return Filename with the year parameter in the filename as string
 #'
 #' @examples
+#' \dontrun{
 #' make_filename(2012)
 #' make_filename(year=2012)
 #' make_filename("2012")
 #' make_filename(year="2012")
+#' }
 #'
 #' @export
 make_filename <- function(year) {
@@ -55,16 +61,18 @@ make_filename <- function(year) {
 #' It outputs a warning message if it cannot find a file for a year in the years parameter. It returns NULL.
 #' It uses functions: make_filename and fars_read.
 #'
-#' @importFrom dplyr mutate select
+#' @importFrom dplyr %>% mutate select
 #' @param years Valid years as a vector (atomic or list) or an expression object.
 #'
 #' @return File data is read into a dataframe object by MONTH and year.
 #'
 #' @examples
+#' \dontrun{
 #' fars_read_years(list(2013, 2014, 2015))
 #' fars_read_years(year=list(2013, 2014, 2015))
 #' fars_read_years(list("2013", "2014", "2015"))
 #' fars_read_years(year=list("2013", "2014", "2015"))
+#' }
 #'
 #' @export
 fars_read_years <- function(years) {
@@ -88,17 +96,19 @@ fars_read_years <- function(years) {
 #' It outputs a warning message if it cannot find a file for a year in the years parameter. It returns NULL.
 #' It uses function: fars_read_years
 #'
-#' @importFrom dplyr bind_rows group_by summarize
+#' @importFrom dplyr %>% bind_rows group_by summarize
 #' @importFrom tidyr gather
 #' @param years Valid years as a vector (atomic or list) or an expression object.
 #'
 #' @return File data is read and sumarized into a dataframe object by MONTH and year.
 #'
 #' @examples
+#' \dontrun{
 #' fars_summarize_years(list(2013, 2014, 2015))
 #' fars_summarize_years(year=list(2013, 2014, 2015))
 #' fars_summarize_years(list("2013", "2014", "2015"))
 #' fars_summarize_years(year=list("2013", "2014", "2015"))
+#' }
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -127,6 +137,7 @@ fars_summarize_years <- function(years) {
 #' @return A plot of accidents by longitude and latitude for state number and year.
 #'
 #' @examples
+#' \dontrun{
 #' fars_map_state(25, 2015)
 #' fars_map_state(state.num=25, year=2015)
 #' fars_map_state("25", "2015")
@@ -135,6 +146,7 @@ fars_summarize_years <- function(years) {
 #' fars_map_state(state.num=25, year="2015")
 #' fars_map_state("25", 2015)
 #' fars_map_state(state.num="25", year=2015)
+#' }
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
