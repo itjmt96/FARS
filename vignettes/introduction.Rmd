@@ -1,0 +1,35 @@
+---
+title: "FARS Package"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The Package has functions to analyze data related to fatal injuries suffered in motor vehicle traffic crashes from US National Highway Traffic Safety Administration's Fatality Analysis Reporting System
+
+## Package Functions
+**Files/Data used for analysis exist in the package's ./init/extradata directory**
+
+1. **make_filename(year)** - Creates a filename as string that includes the year parameter.
+        
+        Example: make_filename(2013) 
+                
+2. **fars_read(filename)** - Reads file as per filename parameter into tbl_df (table/dataframe like format).
+
+        Example: fars_read("accident_2013.csv.bz2") 
+        
+3. **fars_read_years(years)** - Reads multiple files based on years parameter into a dataframe by month and year.
+
+        Example: fars_read_years(list(2013, 2014, 2015))
+
+4. **fars_summarize_years(years)** - Reads multiple files based on years parameter and sumarized into a dataframe by MONTH and year.
+
+        Example: fars_summarize_years(list(2013, 2014, 2015))
+
+5. **fars_map_state(state.num, year)** - Reads a file based on year parameter and plots accident data based on state number parameter.
+
+        Example: fars_map_state(25, 2015)
